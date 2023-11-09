@@ -67,17 +67,28 @@ class __TwigTemplate_d5e9cb2aed5fcaa3c8321953f1c12276 extends Template
         // line 5
         echo " 
 
-    <h1>Resultat Jeu</h1>
+    <h1>Resultat Jeu </h1>
         ";
         // line 8
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["videoGames"]) || array_key_exists("videoGames", $context) ? $context["videoGames"] : (function () { throw new RuntimeError('Variable "videoGames" does not exist.', 8, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["videoGame"]) {
             // line 9
-            echo "            ";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, $context["videoGame"]);
-            echo "
-        ";
+            echo "        ";
+            // line 11
+            echo "                <div class=\"card_game\">
+                    <h5 class=\"game-title\">";
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "name", [], "array", false, false, false, 12), "html", null, true);
+            echo "</h5>
+                    <img src =\"";
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "background_image", [], "array", false, false, false, 13), "html", null, true);
+            echo "\">
+                </div>
+            ";
+            // line 17
+            echo "        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['videoGame'], $context['_parent'], $context['loop']);
@@ -102,7 +113,7 @@ class __TwigTemplate_d5e9cb2aed5fcaa3c8321953f1c12276 extends Template
 
     public function getDebugInfo()
     {
-        return array (  77 => 9,  73 => 8,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  91 => 17,  86 => 13,  82 => 12,  79 => 11,  77 => 9,  73 => 8,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -113,9 +124,16 @@ class __TwigTemplate_d5e9cb2aed5fcaa3c8321953f1c12276 extends Template
 {% block body %}
  
 
-    <h1>Resultat Jeu</h1>
+    <h1>Resultat Jeu </h1>
         {%for videoGame in videoGames%}
-            {{dump(videoGame)}}
+        {# <div class=\"col-3 mt-3\">
+            <div class=card w-100\"> #}
+                <div class=\"card_game\">
+                    <h5 class=\"game-title\">{{videoGame['name']}}</h5>
+                    <img src =\"{{videoGame['background_image']}}\">
+                </div>
+            {# </div>
+        </div> #}
         {%endfor%}
 {% endblock %}
 ", "home/results.html.twig", "C:\\laragon\\www\\SymfonyILoveGamer\\templates\\home\\results.html.twig");

@@ -4,8 +4,15 @@
 {% block body %}
  
 
-    <h1>Resultat Jeu</h1>
+    <h1>Resultat Jeu </h1>
         {%for videoGame in videoGames%}
-            {{dump(videoGame)}}
+        {# <div class="col-3 mt-3">
+            <div class=card w-100"> #}
+                <div class="card_game">
+                    <h5 class="game-title">{{videoGame['name']}}</h5>
+                    <img src ="{{videoGame['background_image']}}">
+                </div>
+            {# </div>
+        </div> #}
         {%endfor%}
 {% endblock %}
