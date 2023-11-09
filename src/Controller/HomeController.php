@@ -12,28 +12,33 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class HomeController extends AbstractController
 {
-    #[Route('/home', name: 'app_home')]
+    // #[Route('/', name: 'app_home',methods:['GET','POST'])]
+    #[Route('/', name: 'app_home')]
     public function index(Request $request, HttpClientInterface $client): Response
     {
         // $game= new Games();
-        $form = $this->createForm(SearchGameType::class,);
+        $form = $this->createForm(SearchGameType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $search_result = ($request->request->all()['search_game']['gameName']);
-            if ($form->isSubmitted() && $form->isValid()) {
-                $search = $form->getData();
-                $response = $client->request(
-                    'GET', //TODO VERIFIER QUE CA FONCTIONNE
-                    "https://api.rawg.io/api/games?key=" . 'b6cc0d847c8f4000b5e6c5f2aa5f8c7a' . "&search=" . $search
-                );
-
-                //TODO FINIR
-             dd($response);
+            $search = $form->getData();
+            // dd($search);
+            $response = $client->request(
+                    'GET',
+                    "https://api.rawg.io/api/games?key=" . 'b6cc0d847c8f4000b5e6c5f2aa5f8c7a' . "&search=" . $search['gameName']
+            );
+            
+            $results = $response->toArray();
+            // dd($results);
+ 
+                //return view results
+            return $this->render('home/results.html.twig', [
+                  'videoGames' => $results['results']
+            ]);
         }
         return $this->render('home/index.html.twig', [
            'form'=> $form->createView()
         ]);
     }
-}
 }
