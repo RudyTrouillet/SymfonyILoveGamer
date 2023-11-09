@@ -13,7 +13,7 @@ class SearchGameType extends AbstractType
     {
         $builder
             ->add('gameName',TextType::class,[
-                'label' => 'Nom du Jeu'
+                'label' => 'Game Name'
                 
             ])
         ;

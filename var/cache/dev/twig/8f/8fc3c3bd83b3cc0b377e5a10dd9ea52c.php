@@ -93,7 +93,7 @@ class __TwigTemplate_daa0b547cd44608b66bd290b3ac8dac3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "SymFony I Love Gamer Rudy TROUILLET!";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -182,7 +182,7 @@ class __TwigTemplate_daa0b547cd44608b66bd290b3ac8dac3 extends Template
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}SymFony I Love Gamer Rudy TROUILLET!{% endblock %}</title>
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN\" crossorigin=\"anonymous\">
         {# <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\"> #}
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}

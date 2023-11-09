@@ -2,7 +2,9 @@
 
 {% block body %}
  
-<h1>Resultat Jeu </h1>
+<h1 class="text-center">Game Results </h1>
+<h2 class="text-center fst-italic">for : " {{searchedGame}} "</h2>
+
 <div class="container mt-5">
     <div class="row">
         {%for videoGame in videoGames%}

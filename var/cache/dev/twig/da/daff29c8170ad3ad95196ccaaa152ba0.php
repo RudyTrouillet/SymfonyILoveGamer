@@ -66,25 +66,30 @@ class __TwigTemplate_d5e9cb2aed5fcaa3c8321953f1c12276 extends Template
 
         // line 4
         echo " 
-<h1>Resultat Jeu </h1>
+<h1 class=\"text-center\">Game Results </h1>
+<h2 class=\"text-center fst-italic\">for : \" ";
+        // line 6
+        echo twig_escape_filter($this->env, (isset($context["searchedGame"]) || array_key_exists("searchedGame", $context) ? $context["searchedGame"] : (function () { throw new RuntimeError('Variable "searchedGame" does not exist.', 6, $this->source); })()), "html", null, true);
+        echo " \"</h2>
+
 <div class=\"container mt-5\">
     <div class=\"row\">
         ";
-        // line 8
+        // line 10
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["videoGames"]) || array_key_exists("videoGames", $context) ? $context["videoGames"] : (function () { throw new RuntimeError('Variable "videoGames" does not exist.', 8, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["videoGames"]) || array_key_exists("videoGames", $context) ? $context["videoGames"] : (function () { throw new RuntimeError('Variable "videoGames" does not exist.', 10, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["videoGame"]) {
-            // line 9
+            // line 11
             echo "            <div class=\"col-3 mt-3\">
                 <div class=\"card w-100\">
                     <img src =\"";
-            // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "background_image", [], "array", false, false, false, 11), "html", null, true);
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "background_image", [], "array", false, false, false, 13), "html", null, true);
             echo "\" height=\"150px\" alt=\"GameImage\">
                     <div class=\"card-body\">
                         <h5 class=\"game-title\">";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "name", [], "array", false, false, false, 13), "html", null, true);
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "name", [], "array", false, false, false, 15), "html", null, true);
             echo "</h5>
                         <a href=\"#\" class =\"btn btn-primary\">Add Game</a>
                     </div>                
@@ -95,7 +100,7 @@ class __TwigTemplate_d5e9cb2aed5fcaa3c8321953f1c12276 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['videoGame'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 19
+        // line 21
         echo "     </div>
 </div>
 ";
@@ -119,7 +124,7 @@ class __TwigTemplate_d5e9cb2aed5fcaa3c8321953f1c12276 extends Template
 
     public function getDebugInfo()
     {
-        return array (  99 => 19,  87 => 13,  82 => 11,  78 => 9,  74 => 8,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  104 => 21,  92 => 15,  87 => 13,  83 => 11,  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -128,7 +133,9 @@ class __TwigTemplate_d5e9cb2aed5fcaa3c8321953f1c12276 extends Template
 
 {% block body %}
  
-<h1>Resultat Jeu </h1>
+<h1 class=\"text-center\">Game Results </h1>
+<h2 class=\"text-center fst-italic\">for : \" {{searchedGame}} \"</h2>
+
 <div class=\"container mt-5\">
     <div class=\"row\">
         {%for videoGame in videoGames%}

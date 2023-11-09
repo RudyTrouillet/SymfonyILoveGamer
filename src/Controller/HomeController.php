@@ -34,7 +34,8 @@ class HomeController extends AbstractController
  
                 //return view results
             return $this->render('home/results.html.twig', [
-                  'videoGames' => $results['results']
+                  'videoGames' => $results['results'],
+                  'searchedGame' => $search['gameName']
             ]);
         }
         return $this->render('home/index.html.twig', [
