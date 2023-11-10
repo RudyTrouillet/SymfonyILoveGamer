@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Games;
 use App\Form\SearchGameType;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -44,9 +46,24 @@ class HomeController extends AbstractController
     }
     
     #[Route('add_game/{id}', name: 'game_add', methods: ['GET'])]
-    public function addgame( int $id)
+    public function addgame( int $id,EntityManagerInterface $em, Request $request, HttpClientInterface $client): Response
 
     {
-        dd($id);
+        // dd($id);
+        $gameAPI=$client->request(
+            'GET',
+            "https://api.rawg.io/api/games?key=" . 'b6cc0d847c8f4000b5e6c5f2aa5f8c7a' . "&id=" . $id
+    );
+        $game = new Games();
+        $game->setname("test1");
+        $game->setSlug("ezeifgzi");
+        //TODO Faire fonctionner
+        // $game->setname($gameAPI('name'));
+        // $game->setSlug($gameAPI('slug'));
+        $user = $this->getUser();
+        $user->addVideogame($game);
+        $em->persist($user);
+        $em->flush();
+        return $this->redirectToRoute("app_home");
     }
 }

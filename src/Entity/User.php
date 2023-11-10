@@ -38,7 +38,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $Surname = null;
 
-    #[ORM\ManyToMany(targetEntity: Games::class)]
+    #[ORM\ManyToMany(targetEntity: Games::class, cascade: ['PERSIST', 'REMOVE'])]
     private Collection $videogames;
 
     public function __construct()
