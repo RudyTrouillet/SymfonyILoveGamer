@@ -67,10 +67,14 @@ class __TwigTemplate_daa0b547cd44608b66bd290b3ac8dac3 extends Template
         // line 16
         echo "    </head>
     <body>
-        ";
+<img src=\"";
         // line 18
-        $this->displayBlock('body', $context, $blocks);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/logo.jpg"), "html", null, true);
+        echo "\" alt=\"I Love Gamer logo\" class=\"w-25 rounded mx-auto d-block\">
+        ";
         // line 19
+        $this->displayBlock('body', $context, $blocks);
+        // line 20
         echo "            <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL\" crossorigin=\"anonymous\"></script>
     </body>
 </html>
@@ -148,7 +152,7 @@ class __TwigTemplate_daa0b547cd44608b66bd290b3ac8dac3 extends Template
 
     }
 
-    // line 18
+    // line 19
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -171,9 +175,14 @@ class __TwigTemplate_daa0b547cd44608b66bd290b3ac8dac3 extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  152 => 18,  139 => 14,  129 => 13,  116 => 10,  106 => 9,  87 => 5,  74 => 19,  72 => 18,  68 => 16,  66 => 13,  63 => 12,  60 => 9,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  156 => 19,  143 => 14,  133 => 13,  120 => 10,  110 => 9,  91 => 5,  78 => 20,  76 => 19,  72 => 18,  68 => 16,  66 => 13,  63 => 12,  60 => 9,  58 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -195,6 +204,7 @@ class __TwigTemplate_daa0b547cd44608b66bd290b3ac8dac3 extends Template
         {% endblock %}
     </head>
     <body>
+<img src=\"{{ asset('img/logo.jpg') }}\" alt=\"I Love Gamer logo\" class=\"w-25 rounded mx-auto d-block\">
         {% block body %}{% endblock %}
             <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL\" crossorigin=\"anonymous\"></script>
     </body>

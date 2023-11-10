@@ -85,7 +85,7 @@ class __TwigTemplate_450e7de7f27285cb74aee14af553db5a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Register</h1>
+        echo "    <h1 class=\"text-center\">Register</h1>
 
     ";
         // line 8
@@ -119,7 +119,7 @@ class __TwigTemplate_450e7de7f27285cb74aee14af553db5a extends Template
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 18, $this->source); })()), "agreeTerms", [], "any", false, false, false, 18), 'row');
         echo "
 
-        <button type=\"submit\" class=\"btn\">Register</button>
+        <button type=\"submit\" class=\"btn btn-primary\">Register</button>
     ";
         // line 21
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 21, $this->source); })()), 'form_end');
@@ -155,7 +155,7 @@ class __TwigTemplate_450e7de7f27285cb74aee14af553db5a extends Template
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <h1 class=\"text-center\">Register</h1>
 
     {{ form_errors(registrationForm) }}
 
@@ -169,7 +169,7 @@ class __TwigTemplate_450e7de7f27285cb74aee14af553db5a extends Template
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type=\"submit\" class=\"btn\">Register</button>
+        <button type=\"submit\" class=\"btn btn-primary\">Register</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
 ", "registration/register.html.twig", "C:\\laragon\\www\\SymfonyILoveGamer\\templates\\registration\\register.html.twig");

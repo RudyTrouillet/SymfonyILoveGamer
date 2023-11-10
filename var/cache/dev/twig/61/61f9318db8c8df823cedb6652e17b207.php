@@ -75,12 +75,12 @@ class __TwigTemplate_8c69ebc39f991860a5283e26cd841e93 extends Template
         // line 8
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), "gameName", [], "any", false, false, false, 8), 'row');
         echo "
-        <button type=\"submit\" class=\"btn\">Search</button>
+        <button type=\"submit\" class=\"btn btn-primary\">Search</button>
 ";
         // line 10
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'form_end');
         echo "
-";
+    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -114,8 +114,9 @@ class __TwigTemplate_8c69ebc39f991860a5283e26cd841e93 extends Template
 
 {{ form_start(form) }}
         {{ form_row(form.gameName) }}
-        <button type=\"submit\" class=\"btn\">Search</button>
+        <button type=\"submit\" class=\"btn btn-primary\">Search</button>
 {{ form_end(form) }}
+    {# <a href=\"{{path('app_home')}}\" class =\"btn btn-primary\">Go Back</a> #}
 {% endblock %}
 ", "home/index.html.twig", "C:\\laragon\\www\\SymfonyILoveGamer\\templates\\home\\index.html.twig");
     }
