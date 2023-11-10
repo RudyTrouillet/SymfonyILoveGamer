@@ -67,14 +67,35 @@ class __TwigTemplate_daa0b547cd44608b66bd290b3ac8dac3 extends Template
         // line 16
         echo "    </head>
     <body>
-<img src=\"";
-        // line 18
+    
+            <nav>  
+            <img src=\"";
+        // line 20
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/logo.jpg"), "html", null, true);
         echo "\" alt=\"I Love Gamer logo\" class=\"w-25 rounded mx-auto d-block\">
+            ";
+        // line 21
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21)) {
+            // line 22
+            echo "            <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+            echo "\"> My library</a>
+            You are logged in as ";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 23, $this->source); })()), "user", [], "any", false, false, false, 23), "userIdentifier", [], "any", false, false, false, 23), "html", null, true);
+            echo ", <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">Logout</a>
+            ";
+        }
+        // line 24
+        echo " 
+            </nav>
+
         ";
-        // line 19
+        // line 27
         $this->displayBlock('body', $context, $blocks);
-        // line 20
+        // line 28
         echo "            <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL\" crossorigin=\"anonymous\"></script>
     </body>
 </html>
@@ -152,7 +173,7 @@ class __TwigTemplate_daa0b547cd44608b66bd290b3ac8dac3 extends Template
 
     }
 
-    // line 19
+    // line 27
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -182,7 +203,7 @@ class __TwigTemplate_daa0b547cd44608b66bd290b3ac8dac3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  156 => 19,  143 => 14,  133 => 13,  120 => 10,  110 => 9,  91 => 5,  78 => 20,  76 => 19,  72 => 18,  68 => 16,  66 => 13,  63 => 12,  60 => 9,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  177 => 27,  164 => 14,  154 => 13,  141 => 10,  131 => 9,  112 => 5,  99 => 28,  97 => 27,  92 => 24,  85 => 23,  80 => 22,  78 => 21,  74 => 20,  68 => 16,  66 => 13,  63 => 12,  60 => 9,  58 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -204,7 +225,15 @@ class __TwigTemplate_daa0b547cd44608b66bd290b3ac8dac3 extends Template
         {% endblock %}
     </head>
     <body>
-<img src=\"{{ asset('img/logo.jpg') }}\" alt=\"I Love Gamer logo\" class=\"w-25 rounded mx-auto d-block\">
+    
+            <nav>  
+            <img src=\"{{ asset('img/logo.jpg') }}\" alt=\"I Love Gamer logo\" class=\"w-25 rounded mx-auto d-block\">
+            {% if app.user %}
+            <a href=\"{{ path('app_home') }}\"> My library</a>
+            You are logged in as {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Logout</a>
+            {% endif %} 
+            </nav>
+
         {% block body %}{% endblock %}
             <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL\" crossorigin=\"anonymous\"></script>
     </body>

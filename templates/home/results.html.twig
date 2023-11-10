@@ -12,7 +12,9 @@
                     <img src ="{{videoGame['background_image']}}" height="150px" alt="GameImage">
                     <div class="card-body">
                         <h5 class="game-title">{{videoGame['name']}}</h5>
-                        <a href="#" class ="btn btn-primary">Add Game</a>
+                        {# <h5 class="game-title">{{videoGame['id']}}</h5> #}
+                        {# <a href="#"  hx-post="{{ path('game_add', {'id': videoGame['id']}) }}" class ="btn btn-primary">Add Game</a> #}
+                        <a href="{{ path('game_add', {'id': videoGame['id']}) }}"  class ="btn btn-primary">Add Game</a>
                     </div>                
                 </div>
             </div>

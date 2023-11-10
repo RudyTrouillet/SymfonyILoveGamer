@@ -42,4 +42,11 @@ class HomeController extends AbstractController
            'form'=> $form->createView()
         ]);
     }
+    
+    #[Route('add_game/{id}', name: 'game_add', methods: ['GET'])]
+    public function addgame( int $id)
+
+    {
+        dd($id);
+    }
 }

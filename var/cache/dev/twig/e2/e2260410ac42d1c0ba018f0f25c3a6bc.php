@@ -98,23 +98,6 @@ class __TwigTemplate_2478aa8e435a52cddff3b45d19af8d80 extends Template
         // line 10
         echo "
     ";
-        // line 11
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11)) {
-            // line 12
-            echo "        <div class=\"mb-3\">
-            You are logged in as ";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "userIdentifier", [], "any", false, false, false, 13), "html", null, true);
-            echo ", <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Logout</a>
-            Or go directly to your  <a href=\"";
-            // line 14
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-            echo "\">library</a>
-        </div>
-    ";
-        }
         // line 17
         echo "
     <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
@@ -158,7 +141,7 @@ class __TwigTemplate_2478aa8e435a52cddff3b45d19af8d80 extends Template
 
     public function getDebugInfo()
     {
-        return array (  132 => 25,  124 => 20,  119 => 17,  113 => 14,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  115 => 25,  107 => 20,  102 => 17,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -173,12 +156,12 @@ class __TwigTemplate_2478aa8e435a52cddff3b45d19af8d80 extends Template
         <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    {% if app.user %}
+    {# {% if app.user %}
         <div class=\"mb-3\">
             You are logged in as {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Logout</a>
             Or go directly to your  <a href=\"{{ path('app_home') }}\">library</a>
         </div>
-    {% endif %}
+    {% endif %} #}
 
     <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
     <label for=\"inputEmail\">Email</label>

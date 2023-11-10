@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -35,6 +37,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255)]
     private ?string $Surname = null;
+
+    #[ORM\ManyToMany(targetEntity: Games::class)]
+    private Collection $videogames;
+
+    public function __construct()
+    {
+        $this->videogames = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -126,6 +136,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setSurname(string $Surname): static
     {
         $this->Surname = $Surname;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Games>
+     */
+    public function getVideogames(): Collection
+    {
+        return $this->videogames;
+    }
+
+    public function addVideogame(Games $videogame): static
+    {
+        if (!$this->videogames->contains($videogame)) {
+            $this->videogames->add($videogame);
+        }
+
+        return $this;
+    }
+
+    public function removeVideogame(Games $videogame): static
+    {
+        $this->videogames->removeElement($videogame);
 
         return $this;
     }
