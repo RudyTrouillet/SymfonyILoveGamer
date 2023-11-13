@@ -52,14 +52,16 @@ class HomeController extends AbstractController
         // dd($id);
         $gameAPI=$client->request(
             'GET',
-            "https://api.rawg.io/api/games?key=" . 'b6cc0d847c8f4000b5e6c5f2aa5f8c7a' . "&id=" . $id
-    );
+            // "https://api.rawg.io/api/games?key=" . 'b6cc0d847c8f4000b5e6c5f2aa5f8c7a' . "&games/=" . $id
+            "https://api.rawg.io/api/games/" . $id ."?key=" . 'b6cc0d847c8f4000b5e6c5f2aa5f8c7a'
+        );
+        $gameToAdd = $gameAPI->toArray();
         $game = new Games();
         $game->setname("test1");
         $game->setSlug("ezeifgzi");
         //TODO Faire fonctionner
-        // $game->setname($gameAPI('name'));
-        // $game->setSlug($gameAPI('slug'));
+        $game->setname($gameToAdd['name']);
+        $game->setSlug($gameToAdd['slug']);
         $user = $this->getUser();
         $user->addVideogame($game);
         $em->persist($user);

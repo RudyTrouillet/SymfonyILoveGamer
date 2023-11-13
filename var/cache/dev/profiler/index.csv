@@ -331,3 +331,17 @@ f3a28b,127.0.0.1,GET,http://symfonyilovegamer.test/index.php/add_game/164830,169
 003a63,127.0.0.1,GET,http://symfonyilovegamer.test/index.php/add_game/164830,1699627688,,302
 a0ba75,127.0.0.1,GET,http://symfonyilovegamer.test/index.php/,1699627689,,200
 0b6f76,127.0.0.1,POST,http://symfonyilovegamer.test/index.php/,1699627695,,200
+0cb8b5,127.0.0.1,GET,http://symfonyilovegamer.test/index.php/,1699862583,,200
+aa98e9,127.0.0.1,POST,http://symfonyilovegamer.test/index.php/,1699862632,,200
+b1a016,127.0.0.1,GET,http://symfonyilovegamer.test/index.php/,1699862868,,200
+d2e659,127.0.0.1,POST,http://symfonyilovegamer.test/index.php/,1699862879,,200
+6eab91,127.0.0.1,POST,http://symfonyilovegamer.test/index.php/,1699862895,,200
+d31fa3,127.0.0.1,GET,http://symfonyilovegamer.test/index.php/,1699863086,,200
+50c23d,127.0.0.1,POST,http://symfonyilovegamer.test/index.php/,1699863090,,200
+76565d,127.0.0.1,POST,http://symfonyilovegamer.test/index.php/,1699863692,,200
+71d247,127.0.0.1,GET,http://symfonyilovegamer.test/index.php/add_game/164830,1699863707,,302
+5ad743,127.0.0.1,GET,http://symfonyilovegamer.test/index.php/,1699863708,,200
+ebfc90,127.0.0.1,POST,http://symfonyilovegamer.test/index.php/,1699863715,,200
+48422c,127.0.0.1,GET,http://symfonyilovegamer.test/index.php/add_game/802026,1699863717,,302
+6281d8,127.0.0.1,GET,http://symfonyilovegamer.test/index.php/,1699863719,,200
+6154ae,127.0.0.1,POST,http://symfonyilovegamer.test/index.php/,1699863754,,200

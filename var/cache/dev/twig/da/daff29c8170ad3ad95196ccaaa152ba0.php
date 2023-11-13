@@ -90,9 +90,11 @@ class __TwigTemplate_d5e9cb2aed5fcaa3c8321953f1c12276 extends Template
             // line 14
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "name", [], "array", false, false, false, 14), "html", null, true);
             echo "</h5>
+                        <h5 class=\"game-title\">";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "id", [], "array", false, false, false, 15), "html", null, true);
+            echo "</h5>
                         ";
-            // line 16
-            echo "                        ";
             // line 17
             echo "                        <a href=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("game_add", ["id" => twig_get_attribute($this->env, $this->source, $context["videoGame"], "id", [], "array", false, false, false, 17)]), "html", null, true);
@@ -134,7 +136,7 @@ class __TwigTemplate_d5e9cb2aed5fcaa3c8321953f1c12276 extends Template
 
     public function getDebugInfo()
     {
-        return array (  112 => 23,  109 => 22,  97 => 17,  95 => 16,  91 => 14,  86 => 12,  82 => 10,  78 => 9,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  114 => 23,  111 => 22,  99 => 17,  95 => 15,  91 => 14,  86 => 12,  82 => 10,  78 => 9,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -153,7 +155,7 @@ class __TwigTemplate_d5e9cb2aed5fcaa3c8321953f1c12276 extends Template
                     <img src =\"{{videoGame['background_image']}}\" height=\"150px\" alt=\"GameImage\">
                     <div class=\"card-body\">
                         <h5 class=\"game-title\">{{videoGame['name']}}</h5>
-                        {# <h5 class=\"game-title\">{{videoGame['id']}}</h5> #}
+                        <h5 class=\"game-title\">{{videoGame['id']}}</h5>
                         {# <a href=\"#\"  hx-post=\"{{ path('game_add', {'id': videoGame['id']}) }}\" class =\"btn btn-primary\">Add Game</a> #}
                         <a href=\"{{ path('game_add', {'id': videoGame['id']}) }}\"  class =\"btn btn-primary\">Add Game</a>
                     </div>                
