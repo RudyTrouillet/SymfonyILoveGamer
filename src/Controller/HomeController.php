@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Games;
 use App\Form\SearchGameType;
+use App\Repository\GamesRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -60,6 +61,25 @@ class HomeController extends AbstractController
         $user = $this->getUser();
         $user->addVideogame($game);
         $em->persist($user);
+        $em->flush();
+        return $this->redirectToRoute("app_game_library");
+    }
+    // SHOULD BE WORKING
+    // #[Route('/rem_game/{id}', name: 'game_rem', methods: ['GET'])]
+    // public function remgame(Games $game,EntityManagerInterface $em)
+    // {
+    //     $user = $this->getUser();
+    //     $user->removeVideoGame($game);
+    //     $em->flush();
+    //     return $this->redirectToRoute("app_game_library");
+    // }
+    // ALTERNATIVE OPTION
+    #[Route('/rem_game/{id}', name:'game_rem', methods: ['GET'])]
+    public function remgame(int $id, GamesRepository $gamesRepository,EntityManagerInterface $em)
+    {
+        $game = $gamesRepository->findOneBy(['id'=> $id]);
+        $user = $this->getUser();
+        $user->removeVideoGame($game);
         $em->flush();
         return $this->redirectToRoute("app_game_library");
     }

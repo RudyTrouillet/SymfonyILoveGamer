@@ -38,6 +38,7 @@ return [
                     .')'
                 .')'
                 .'|/add_game/([^/]++)(*:187)'
+                .'|/rem_game/([^/]++)(*:213)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -48,8 +49,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        187 => [
-            [['_route' => 'game_add', '_controller' => 'App\\Controller\\HomeController::addgame'], ['id'], ['GET' => 0], null, false, true, null],
+        187 => [[['_route' => 'game_add', '_controller' => 'App\\Controller\\HomeController::addgame'], ['id'], ['GET' => 0], null, false, true, null]],
+        213 => [
+            [['_route' => 'game_rem', '_controller' => 'App\\Controller\\HomeController::remgame'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

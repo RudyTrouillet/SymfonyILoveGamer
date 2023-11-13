@@ -19,6 +19,7 @@ return [
     'app_game_library' => [[], ['_controller' => 'App\\Controller\\GameLibraryController::index'], [], [['text', '/game/library']], [], [], []],
     'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
     'game_add' => [['id'], ['_controller' => 'App\\Controller\\HomeController::addgame'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/add_game']], [], [], []],
+    'game_rem' => [['id'], ['_controller' => 'App\\Controller\\HomeController::remgame'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/rem_game']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
