@@ -19,6 +19,9 @@ class Games
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $background_image = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Games
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getBackgroundImage(): ?string
+    {
+        return $this->background_image;
+    }
+
+    public function setBackgroundImage(string $background_image): static
+    {
+        $this->background_image = $background_image;
 
         return $this;
     }

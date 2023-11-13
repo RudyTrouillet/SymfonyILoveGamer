@@ -14,7 +14,6 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class HomeController extends AbstractController
 {
-    // #[Route('/', name: 'app_home',methods:['GET','POST'])]
     #[Route('/', name: 'app_home')]
     public function index(Request $request, HttpClientInterface $client): Response
     {
@@ -49,23 +48,19 @@ class HomeController extends AbstractController
     public function addgame( int $id,EntityManagerInterface $em, Request $request, HttpClientInterface $client): Response
 
     {
-        // dd($id);
         $gameAPI=$client->request(
             'GET',
-            // "https://api.rawg.io/api/games?key=" . 'b6cc0d847c8f4000b5e6c5f2aa5f8c7a' . "&games/=" . $id
             "https://api.rawg.io/api/games/" . $id ."?key=" . 'b6cc0d847c8f4000b5e6c5f2aa5f8c7a'
         );
         $gameToAdd = $gameAPI->toArray();
         $game = new Games();
-        $game->setname("test1");
-        $game->setSlug("ezeifgzi");
-        //TODO Faire fonctionner
         $game->setname($gameToAdd['name']);
         $game->setSlug($gameToAdd['slug']);
+        $game->setBackgroundImage($gameToAdd['background_image']);
         $user = $this->getUser();
         $user->addVideogame($game);
         $em->persist($user);
         $em->flush();
-        return $this->redirectToRoute("app_home");
+        return $this->redirectToRoute("app_game_library");
     }
 }

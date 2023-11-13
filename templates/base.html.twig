@@ -19,7 +19,8 @@
             <nav>  
             <img src="{{ asset('img/logo.jpg') }}" alt="I Love Gamer logo" class="w-25 rounded mx-auto d-block">
             {% if app.user %}
-            <a href="{{ path('app_home') }}"> My library</a>
+            <a href="{{ path('app_game_library') }}">My library</a>
+            <a href="{{ path('app_home') }}">Search Game</a>
             You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
             {% endif %} 
             </nav>
