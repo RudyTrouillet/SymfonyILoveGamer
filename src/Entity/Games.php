@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\GamesRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: GamesRepository::class)]
@@ -21,6 +22,9 @@ class Games
 
     #[ORM\Column(length: 255)]
     private ?string $background_image = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $released = null;
 
     public function getId(): ?int
     {
@@ -59,6 +63,18 @@ class Games
     public function setBackgroundImage(string $background_image): static
     {
         $this->background_image = $background_image;
+
+        return $this;
+    }
+
+    public function getReleased(): ?\DateTimeInterface
+    {
+        return $this->released;
+    }
+
+    public function setReleased(\DateTimeInterface $released): static
+    {
+        $this->released = $released;
 
         return $this;
     }

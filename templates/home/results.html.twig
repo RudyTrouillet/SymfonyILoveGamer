@@ -12,6 +12,7 @@
                     <img src ="{{videoGame['background_image']}}" height="150px" alt="GameImage">
                     <div class="card-body">
                         <h5 class="game-title">{{videoGame['name']}}</h5>
+                        <h5 class="game-title">{{videoGame['released']}}</h5>
                         <a href="{{ path('game_add', {'id': videoGame['id']}) }}"  class ="btn btn-primary">Add Game</a>
                     </div>                
                 </div>

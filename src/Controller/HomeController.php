@@ -57,6 +57,8 @@ class HomeController extends AbstractController
         $game = new Games();
         $game->setname($gameToAdd['name']);
         $game->setSlug($gameToAdd['slug']);
+        // $game->setReleased($gameToAdd['released']);
+        $game->setReleased(new \DateTime($gameToAdd['released']));
         $game->setBackgroundImage($gameToAdd['background_image']);
         $user = $this->getUser();
         $user->addVideogame($game);

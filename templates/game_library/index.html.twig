@@ -10,9 +10,9 @@
             <div class="col-3 mt-3">
                 <div class="card w-100">
                     <div class="card-body">
-                        <img src ={{ videoGame.backgroundImage }} height="100px" alt="GameImage">
+                        <img src ={{ videoGame.backgroundImage }} height="150px"=  alt="GameImage">
                         <h5 class="game-title">{{videoGame.name}}</h5>
-                        <h5 class="game-title">{{videoGame.slug}}</h5>
+                        <h5 class="game-title">{{videoGame.released|date('d-m-Y')}}</h5>
                         <a href="{{ path('game_rem', {'id': videoGame.id}) }}" class ="btn btn-danger">Remove Game</a>
                         {# <a href="{{ path('game_add', {'id': videoGame['id']}) }}"  class ="btn btn-primary">Add Game</a> #}
 

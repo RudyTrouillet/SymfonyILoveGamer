@@ -83,14 +83,14 @@ class __TwigTemplate_0ae8748d7e79ba0a841437cbd38c9101 extends Template
                         <img src =";
             // line 13
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "backgroundImage", [], "any", false, false, false, 13), "html", null, true);
-            echo " height=\"100px\" alt=\"GameImage\">
+            echo " height=\"150px\"=  alt=\"GameImage\">
                         <h5 class=\"game-title\">";
             // line 14
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "name", [], "any", false, false, false, 14), "html", null, true);
             echo "</h5>
                         <h5 class=\"game-title\">";
             // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "slug", [], "any", false, false, false, 15), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videoGame"], "released", [], "any", false, false, false, 15), "d-m-Y"), "html", null, true);
             echo "</h5>
                         <a href=\"";
             // line 16
@@ -149,9 +149,9 @@ class __TwigTemplate_0ae8748d7e79ba0a841437cbd38c9101 extends Template
             <div class=\"col-3 mt-3\">
                 <div class=\"card w-100\">
                     <div class=\"card-body\">
-                        <img src ={{ videoGame.backgroundImage }} height=\"100px\" alt=\"GameImage\">
+                        <img src ={{ videoGame.backgroundImage }} height=\"150px\"=  alt=\"GameImage\">
                         <h5 class=\"game-title\">{{videoGame.name}}</h5>
-                        <h5 class=\"game-title\">{{videoGame.slug}}</h5>
+                        <h5 class=\"game-title\">{{videoGame.released|date('d-m-Y')}}</h5>
                         <a href=\"{{ path('game_rem', {'id': videoGame.id}) }}\" class =\"btn btn-danger\">Remove Game</a>
                         {# <a href=\"{{ path('game_add', {'id': videoGame['id']}) }}\"  class =\"btn btn-primary\">Add Game</a> #}
 
